@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "./run-tests.sh"
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.6.3",
+    "cypress": "^3.2.0"
+  }
+}

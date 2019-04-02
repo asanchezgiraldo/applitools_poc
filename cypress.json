@@ -1,0 +1,8 @@
+{
+  "chromeWebSecurity": false,
+  "pageLoadTimeout": 120000,
+  "video": true,
+  "viewportWidth": 1400,
+  "baseUrl": "https://insurance.qantas.com",
+  "projectId": "5x7cc1"
+}
