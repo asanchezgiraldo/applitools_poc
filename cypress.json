@@ -1,6 +1,6 @@
 {
   "chromeWebSecurity": false,
-  "pageLoadTimeout": 120000,
+  "eyesTimeout": 120000,
   "video": true,
   "viewportWidth": 1400,
   "baseUrl": "https://insurance.qantas.com",
