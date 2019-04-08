@@ -31,7 +31,7 @@ selenium:chrome@52.0:linux
 ```
 cd docker
 docker-compose up
-testcafe -c 2 selenium:chrome@73.0.3683.86 testcafe/*.js --skip-js-errors
+testcafe selenium:chrome@73.0.3683.86 testcafe/*.js --skip-js-errors
 testcafe -c 2 selenium:chrome@72.0.3626.121 testcafe/*.js --skip-js-errors
 testcafe -c 2 selenium:chrome@71.0.3578.98 testcafe/*.js --skip-js-errors
 ```

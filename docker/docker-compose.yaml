@@ -1,6 +1,6 @@
-# To start Docker in Swarm mode, you need to run `docker swarm init`
-# To deploy the Grid, `docker stack deploy -c docker-compose.yml grid`
-# Stop with `docker stack rm grid`
+# To execute this docker-compose yml file use `docker-compose -f <file_name> up`
+# Add the `-d` flag at the end for detached execution
+
 # refer to https://github.com/SeleniumHQ/docker-selenium/releases for the versions
 
 version: "3"
@@ -47,7 +47,7 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
 
-  firefox-mercury:
+  firefox-66:
     image: selenium/node-firefox:3.141.59-mercury
     volumes:
       - /dev/shm:/dev/shm
