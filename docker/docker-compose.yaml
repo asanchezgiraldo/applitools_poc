@@ -1,13 +1,19 @@
-# To execute this docker-compose yml file use `docker-compose -f <file_name> up`
-# Add the `-d` flag at the end for detached execution
+# To start Docker in Swarm mode, you need to run `docker swarm init`
+# To deploy the Grid, `docker stack deploy -c docker-compose.yml grid`
+# Stop with `docker stack rm grid`
+# refer to https://github.com/SeleniumHQ/docker-selenium/releases for the versions
+
 version: "3"
+
 services:
+
   selenium-hub:
     image: selenium/hub:3.141.59-mercury
     container_name: selenium-hub
     ports:
       - "4444:4444"
-  chrome:
+
+  chrome-73:
     image: selenium/node-chrome:3.141.59-mercury
     volumes:
       - /dev/shm:/dev/shm
@@ -16,12 +22,38 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
-  firefox:
+
+  chrome-72:
+    image: selenium/node-chrome:3.141.59-krypton
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+  chrome-71:
+    image: selenium/node-chrome:3.141.59-europium
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+  firefox-mercury:
     image: selenium/node-firefox:3.141.59-mercury
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
