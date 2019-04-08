@@ -12,12 +12,12 @@ export APPLITOOLS_API_KEY=<applitools-key>
 npm install testcafe -g
 npm install testcafe-browser-provider-selenium -g
 
-# selenium:browserName[@version][:platform]
-# for example:
+ selenium:browserName[@version][:platform]
+ for example:
 
-# selenium:chrome
-# selenium:chrome@52.0
-# selenium:chrome@52.0:linux
+ selenium:chrome
+ selenium:chrome@52.0
+ selenium:chrome@52.0:linux
 
 
 cd docker
