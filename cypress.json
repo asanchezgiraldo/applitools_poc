@@ -1,8 +1,8 @@
 {
   "chromeWebSecurity": false,
   "eyesTimeout": 120000,
-  "video": true,
+  "video": false,
   "viewportWidth": 1400,
-  "baseUrl": "https://insurance.qantas.com",
+  "baseUrl": "https://www.qantasmoney.com",
   "projectId": "5x7cc1"
 }
